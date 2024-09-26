@@ -1,6 +1,9 @@
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install python3-pip
+
+sudo reboot
+
+sudo apt-get -y install python3-pip
 
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_spi 0
@@ -11,10 +14,10 @@ sudo raspi-config nonint disable_raspi_config_at_boot 0
 
 sudo apt-get install -y i2c-tools libgpiod-dev python3-libgpiod
 
-rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+sudo rm -f /usr/lib/python3.11/EXTERNALLY-MANAGED
 
-pip3 install --upgrade RPi.GPIO
-pip3 install --upgrade adafruit-blinka
-pip3 install Flask  gunicorn
+sudo pip3 install --upgrade RPi.GPIO
+sudo pip3 install --upgrade adafruit-blinka
+sudo pip3 install Flask  gunicorn
 
 gunicorn --bind 0.0.0.0:8000 code:api
