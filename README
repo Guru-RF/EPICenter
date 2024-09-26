@@ -18,6 +18,7 @@ sudo rm -f /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 sudo pip3 install --upgrade RPi.GPIO
 sudo pip3 install --upgrade adafruit-blinka
+sudo pip3 install adafruit-circuitpython-rfm9x
 sudo pip3 install Flask  gunicorn
 
 gunicorn --bind 0.0.0.0:8000 code:api
