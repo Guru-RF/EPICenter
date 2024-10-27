@@ -21,4 +21,6 @@ sudo pip3 install --upgrade adafruit-blinka
 sudo pip3 install adafruit-circuitpython-rfm9x
 sudo pip3 install Flask  gunicorn
 
+sudo pip3 install adafruit-circuitpython-bme680
+
 gunicorn --bind 0.0.0.0:8000 code:api
